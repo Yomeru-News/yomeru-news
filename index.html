@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yomeru — Find NHK News Easy Articles You Can Read</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <h1>Yomeru <span class="title-jp">読める</span></h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark mode</button>
+    </div>
+    <div class="subtitle-row">
+      <p class="subtitle">NHK News Easy articles you can read</p>
+      <span class="subtitle-sep">·</span>
+      <a class="sponsor-link" href="https://ko-fi.com/pmdov" target="_blank" rel="noopener">♥ Support</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="vocab-section">
+      <h2>Your Vocabulary</h2>
+      <div class="vocab-controls">
+        <textarea id="vocab-input" placeholder="Paste your vocabulary here (one word per line)"></textarea>
+        <div class="vocab-actions">
+          <label class="file-upload-btn">
+            Upload File (.txt, .csv, .tsv)
+            <input type="file" id="vocab-file" accept=".txt,.csv,.tsv" hidden>
+          </label>
+          <button id="save-vocab" class="btn btn-primary">Save Vocabulary</button>
+          <button id="clear-vocab" class="btn btn-danger">Clear</button>
+        </div>
+        <div id="vocab-status" class="status-badge"></div>
+      </div>
+    </section>
+
+    <section id="articles-section">
+      <h2>Recommended Articles</h2>
+      <div id="sort-controls">
+        <label>Sort by:
+          <select id="sort-select">
+            <option value="easiest">Easiest First</option>
+            <option value="hardest">Hardest First</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </label>
+      </div>
+      <div id="articles-loading" class="loading">Loading articles...</div>
+      <div id="articles-list"></div>
+      <div id="no-vocab-message" class="message" hidden>
+        Add your vocabulary above to see personalized article recommendations.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Articles sourced from <a href="https://www3.nhk.or.jp/news/easy/" target="_blank" rel="noopener">NHK NEWS WEB EASY</a>. Data updated daily.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
